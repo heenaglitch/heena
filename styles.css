@@ -1,0 +1,279 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+/* Info Tooltip */
+.info-tooltip {
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin-top: -40px;
+}
+
+.info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tooltip-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.info-tooltip:hover .tooltip-content {
+    display: block;
+}
+
+.tooltip-content p {
+    margin-bottom: 10px;
+}
+
+.tooltip-content ul {
+    padding-left: 20px;
+}
+
+/* Calculator Section */
+.calculator {
+    margin-bottom: 2rem;
+}
+
+.unit-selector {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.unit-selector label {
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.input-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.input-group label {
+    width: 80px;
+    font-weight: bold;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.unit-label {
+    margin-left: 10px;
+    width: 30px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#calculate-btn {
+    background-color: #2ecc71;
+    color: white;
+    flex: 2;
+    margin-right: 10px;
+}
+
+#calculate-btn:hover {
+    background-color: #27ae60;
+}
+
+#reset-btn {
+    background-color: #e74c3c;
+    color: white;
+    flex: 1;
+}
+
+#reset-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Result Section */
+.result {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    text-align: center;
+    display: none;
+}
+
+.result.active {
+    display: block;
+}
+
+.bmi-value {
+    margin-bottom: 1rem;
+}
+
+.bmi-value h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+#bmi-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.bmi-category {
+    margin-bottom: 1.5rem;
+}
+
+.bmi-category h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#bmi-category {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* BMI Chart */
+.bmi-chart {
+    display: flex;
+    height: 40px;
+    position: relative;
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.chart-segment {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 0.8rem;
+    position: relative;
+}
+
+.chart-segment span:first-child {
+    font-weight: bold;
+}
+
+.chart-segment span:last-child {
+    font-size: 0.7rem;
+}
+
+.underweight {
+    background-color: #3498db;
+}
+
+.normal {
+    background-color: #2ecc71;
+}
+
+.overweight {
+    background-color: #f39c12;
+}
+
+.obese {
+    background-color: #e74c3c;
+}
+
+.chart-indicator {
+    position: absolute;
+    width: 3px;
+    height: 40px;
+    background-color: #2c3e50;
+    top: 0;
+    transition: left 0.5s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    #calculate-btn, #reset-btn {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .tooltip-content {
+        width: 250px;
+    }
+    
+    .chart-segment span:first-child {
+        font-size: 0.7rem;
+    }
+    
+    .chart-segment span:last-child {
+        display: none;
+    }
+}

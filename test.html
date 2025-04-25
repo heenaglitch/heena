@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator Tests</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .instructions {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .test-results {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 5px solid #3498db;
+        }
+        pre {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>BMI Calculator Tests</h1>
+    
+    <div class="instructions">
+        <h2>Instructions</h2>
+        <p>This page runs automated tests for the BMI Calculator application.</p>
+        <p>To view test results:</p>
+        <ol>
+            <li>Open the browser's developer console (F12 or right-click and select "Inspect")</li>
+            <li>Navigate to the "Console" tab</li>
+            <li>Check the test results displayed in the console</li>
+        </ol>
+    </div>
+    
+    <div class="test-results">
+        <h2>Test Results</h2>
+        <p>Open the browser console to see detailed test results.</p>
+        <p>The tests verify:</p>
+        <ul>
+            <li>BMI calculation using metric units (cm, kg)</li>
+            <li>BMI calculation using imperial units (in, lb)</li>
+            <li>Correct BMI category determination</li>
+        </ul>
+    </div>
+    
+    <h2>Test Implementation</h2>
+    <pre id="test-code">Loading test code...</pre>
+    
+    <script>
+        // Fetch and display the test code
+        fetch('tests.js')
+            .then(response => response.text())
+            .then(code => {
+                document.getElementById('test-code').textContent = code;
+            })
+            .catch(error => {
+                document.getElementById('test-code').textContent = 'Error loading test code: ' + error;
+            });
+    </script>
+    
+    <!-- Load the test script -->
+    <script src="tests.js"></script>
+</body>
+</html>
